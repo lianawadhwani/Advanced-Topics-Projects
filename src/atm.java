@@ -1,9 +1,14 @@
 
 public class atm {
 	private int money;
+	
+	public atm (int money)
+	{
+		this.money = 0;
+	}
 	public int gainMoney()
 	{
-		money += 100; 
+		money += 100;
 		return money;
 	}
 	
@@ -14,7 +19,7 @@ public class atm {
 	
 	public static void main (String [] args)
 	{
-		atm a = new atm();
+		atm a = new atm(0);
 		a.gainMoney();
 		System.out.println (a.toString());
 	}
