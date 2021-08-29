@@ -1,26 +1,25 @@
+import java.util.HashMap;
 
 public class atm {
-	private int money;
+	private String iD;
+	private static HashMap bankAccounts; 
+	bankAccounts = new HashMap();
 	
-	public atm (int money)
+	public atm (String iD)
 	{
-		this.money = 0;
+		this.iD = iD;
 	}
-	public int gainMoney()
+	public void deposit(long iD, double amount)
 	{
-		money += 100;
-		return money;
-	}
-	
-	public String toString ()
-	{
-		return "" + money;
-	}
-	
-	public static void main (String [] args)
-	{
-		atm a = new atm(0);
-		a.gainMoney();
-		System.out.println (a.toString());
+		this.iD = "" + iD;
+		double oldMoney = (double) bankAccounts.get(this.iD);
+		if (bankAccounts.containsKey((this.iD)))
+		{
+			bankAccounts.put(this.iD, oldMoney + amount);
+		}
+		else
+		{
+			bankAccounts.put(this.iD, amount);
+		}
 	}
 }
