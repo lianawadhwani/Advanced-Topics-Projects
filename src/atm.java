@@ -3,14 +3,14 @@ import java.util.HashMap;
 public class atm {
 	private String iD;
 	private HashMap <String,Double> bankAccounts = new HashMap <String,Double>(); 
-	public void deposit(double iD, double amount)
+	public void deposit(String iD, double amount)
 	{
 		if (amount < 0)
 		{
 			System.out.println ("Can't deposit a negative amount");
 		    return;
 		}
-		this.iD = "" + iD;
+		this.iD = iD;
 		if (bankAccounts.isEmpty() || !bankAccounts.containsKey((this.iD)))
 		{
 			bankAccounts.put(this.iD, amount);
@@ -26,10 +26,10 @@ public class atm {
 	/*public static void main (String [] args)
 	{
 		atm a = new atm ();
-		a.deposit(505, 100);
-		a.deposit(202, 50);
-		a.deposit(1234567812, 1);
-		a.deposit(505, 10);
-		a.deposit(303039384875.0, -20);
+		a.deposit("505", 100);
+		a.deposit("202", 50);
+		a.deposit("1234567812", 1);
+		a.deposit("505", 10);
+		a.deposit("303039384875", -20);
 	}*/
 }
