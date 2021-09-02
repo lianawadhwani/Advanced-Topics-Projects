@@ -41,13 +41,13 @@ public class atm {
 			bankAccounts.put(ident, currentMon); 
 		}	
 	}
-	public double checkBalance (String identification) {
+	public String checkBalance (String identification) {
 		if (bankAccounts.containsKey(identification)==false) {
-			System.out.println("Sorry this is not a valid ID."); 
-			return -1.0; 
+			return("Sorry this is not a valid ID."); 
+			
 		}
 		else {
-			return (bankAccounts.get(identification)); 
+			return (""+bankAccounts.get(identification)); 
 		}
 	}
 	public static void main (String [] args)
